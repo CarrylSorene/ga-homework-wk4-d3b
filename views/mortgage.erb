@@ -1,0 +1,20 @@
+<h1><%= @title %></h1>
+
+<form action="/mortgage" method="post">
+  <input type="number" name="calculation" autofocus>
+  <button>Calculate Mortgage</button>
+
+</form>
+
+take values
+
+loan
+apr /100 /12
+term
+
+calc payments 
+
+        temp = Math.pow((1 + apr), term);
+        payment = loan * apr * temp / (temp - 1);
+        payment = Math.round(payment * 100) / 100; // round to 2 decimals
+puts result

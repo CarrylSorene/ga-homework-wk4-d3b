@@ -1,0 +1,20 @@
+<h1><%= @title %></h1>
+
+<form action="/trip" method="post">
+  <input type="number" name="calculation" autofocus>
+  <button>Calculate Trip</button>
+
+</form>
+
+inputs
+
+dist, mpg, cost, speed
+
+
+        time = dist / speed;
+        time = Math.round(time * 100) / 100; // round it to two decimals
+        actualMPG = (mpg > 60) ? Math.max(0, mpg - (speed - 60) * 2) : mpg;
+
+          cost = (dist / actualMPG * cost);
+          cost = Math.round(cost * 100) / 100;
+puts result
