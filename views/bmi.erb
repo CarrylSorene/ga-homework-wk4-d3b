@@ -1,18 +1,10 @@
 <h1><%= @title %></h1>
 
 <form action="/bmi" method="post">
-  <input type="number" name="calculation" autofocus>
+  <input type="number" name="mass" placeholder="Enter your weight" autofocus>
+  <input type="number" name="height" placeholder="Enter your height">
   <button>Calculate BMI</button>
 
 </form>
-
-
-take values:
-
-mass
-height
-
-          bmi = mass / Math.pow(height, 2);
-          bmi = Math.round(bmi * 100) / 100; // round it to two decimals --> .round in Ruby
 
     

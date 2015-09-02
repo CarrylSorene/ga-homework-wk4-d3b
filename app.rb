@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require_relative './models/calc'
 
 get '/' do
   @title = 'Calculator'
@@ -8,10 +7,12 @@ get '/' do
 end
 
 post '/' do
-  case params[].downcase
-  when + then form_input1 = params[:number1] + form_input2 = params[:number2]
-  when - then form_input1 = params[:number1] - form_input2 = params[:number2]
-  when * then form_input1 = params[:number1] * form_input2 = params[:number2]
-  when '/' then form_input1 = params[:number1] / form_input2 = params[:number2]
+  case params[:select]
+    when '+' then @home = form_input1 = params[:number1].to_f + form_input2 = params[:number2].to_f
+    when '-' then @home = form_input1 = params[:number1].to_f - form_input2 = params[:number2].to_f
+    when '*' then @home = form_input1 = params[:number1].to_f * form_input2 = params[:number2].to_f
+    when '/' then @home = form_input1 = params[:number1].to_f / form_input2 = params[:number2].to_f
+    else erb :home
+    end
+  erb :home
   end
-end
